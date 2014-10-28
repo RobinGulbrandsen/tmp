@@ -1,0 +1,21 @@
+﻿<h2>{{'documents.TITLE_EDIT'|translate}}</h2>
+<!--
+    <tabset>
+        <tab data-ui-sref=".information" ui-sref-active="active" heading="{{'documents.META_INFORMATION'|translate}}">
+        </tab>
+        <tab data-ui-sref=".attachments" ui-sref-active="active" heading="{{'documents.ATTACHMENTS'|translate}}">
+        </tab>
+    </tabset>
+    -->
+<div class="document-edit-navigation">
+    <button class="btn btn-active" id="document-edit-meta" data-ui-sref=".information">
+        {{'documents.META_INFORMATION'|translate}}
+    </button>
+    <button class="btn" id="document-edit-attatchment" data-ui-sref=".attachments">
+        {{'documents.ATTACHMENTS'|translate}}
+    </button>
+</div>
+
+<div data-ui-view="edit">
+    
+</div>

@@ -1,0 +1,86 @@
+﻿<!--loading spinner-->
+<div id="loadingSpinner" data-ng-show="loadingSettings" class="container-max-medium">
+</div>
+
+<!-- setting page-->
+<div data-ng-show="!loadingSettings && settings">
+    <p>
+        {{'settings.INFO'|translate}}
+    </p>
+    <table class="settings-form">
+        <tr>
+            <td>
+                <label class="table-text">{{settings.TimeStart.Description}}</label>
+            </td>
+            <td>
+                <label class="table-text">{{settings.TimeStart.Value}}</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="table-text">{{settings.TimeStop.Description}}</label>
+            </td>
+            <td>
+                <label class="table-text"><span data-ng-show="settings.TimeStop.Value != 0">{{settings.TimeStop.Value}}</span></label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="table-text">{{settings.TimeCount.Description}}</label>
+            </td>
+            <td>
+                <label class="table-text">{{settings.TimeCount.Value}}</label>
+            </td>
+        </tr>
+    </table>
+    <button data-ng-show="settings.TimeStop.Value != 0" class="btn btn-success" data-ng-click="updateFlickr()">{{'settings.KNAPP'|translate}}</button>
+    <button data-ng-show="settings.TimeStop.Value == 0" class="btn btn-success" data-ng-click="updateSettings()">{{'settings.OPPDATER_KNAPP'|translate}}</button>
+<!-- Settings page for cacher 
+    <form name="form" class="form-horizontal">
+        
+    <table class="settings-form">
+        <tr>
+            <td>
+                <label class="table-text">{{settings.CacheActive.Description}}</label>
+            </td>
+            <td>
+                <input class="input-box" type="checkbox" data-ng-model="settings.CacheActive.Value" ng-true-value="1" ng-false-value="0" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="table-text">{{settings.CacheInterval.Description}}</label>
+            </td>
+            <td>
+                <div class="btn-group" dropdown is-open="status.isopen">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{selectedIntervalName}} <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-left li-shadow" role="menu">
+                        <li data-ng-repeat="cache in cachingItems"
+                            data-ng-click="selectCache(cache)">{{ cache.name  }}</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class="table-text">{{settings.CacheTime.Description}}</label>
+            </td>
+            <td>
+                <div class="btn-group" dropdown is-open="status.isopen">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{settings.CacheTime.Value}} <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right li-shadow dropdown-time" role="menu">
+                        <li data-ng-repeat="time in times"
+                            data-ng-click="selectTime(time)">Kl. {{ time }}</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!-- Save button--
+        <button class="btn btn-success" data-ng-click="saveSettings()">
+            <i class="fa fa-save"></i> {{'settings.SAVE_SETTINGS'|translate}}
+        </button>
+    </form>
+    -->
+</div>
+

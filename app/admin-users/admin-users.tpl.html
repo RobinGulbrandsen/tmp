@@ -1,0 +1,33 @@
+﻿<div>
+    <div id="loadingSpinner" data-ng-show="loadingSpinnerShow">
+    </div>
+
+    <div class="editor-list-menu">
+        <h2 class="editor-list-title">{{'users.TITLE' | translate}}</h2>
+        <!-- new users-->
+        <button class="editor-list-button btn btn-success" data-ng-click="newUser()"><i class="fa fa-user"></i> {{'users.NEW_USER' | translate}}</button>
+    </div>
+
+    <!-- document list -->
+    <table>
+        <!-- table header-->
+        <thead>
+            <tr>
+                <th>{{'users.EMAIL' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- repaeat for each document-->
+            <tr data-ng-repeat="user in users">
+                <td class="table-text" data-ng-click="editUser(user.Id)">
+                    {{ user.Email }}
+                </td>
+                <td class="table-delete">
+                    <button class="btn btn-danger" data-ng-click="deleteUser(user.Id, user.Email)"><i class="fa fa-trash-o"></i> {{'common.DELETE' | translate}}</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

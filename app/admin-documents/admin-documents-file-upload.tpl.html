@@ -1,0 +1,77 @@
+﻿<!-- showing file upload if there is no files uploaded-->
+<section data-ng-show="document.Status == 0  || document.Status ==5">
+    <div data-ng-show="document.Status ==5">
+        <span class="error">{{'documents.FILE_UPLOAD_ERROR'|translate}}</span>
+    </div>
+    <form>
+        <!-- file selector-->
+        <div class="form-group">
+            <label>{{'documents.FORM_CHOOSE_FILES'|translate}}</label>
+            <input type="file" ng-file-select="onFileSelect($files)" multiple>
+        </div>
+
+        <!--drag and dropable list -->
+        <div class="form-group">
+
+            <div>
+                <!-- error message if the list will contain both documents and images-->
+                <span class="error" data-ng-show="errorDocumentAndImage">{{'documents.INVALID_DOCUMENT_IMAGE_COMBINATION'|translate}}</span>
+
+                <!--error message if the file has the wrong file type-->
+                <span class="error" data-ng-show="errorWrongFileType">{{'documents.INVALID_FILE_TYPE'|translate}}</span>
+            </div>
+
+            <label>{{'documents.FORM_FILES_UPLOADING'|translate}}</label>
+            <ul id="document-list" class="sortable">
+                <!-- note the "track by" section. this is important so that it doesn't rebuild the list -->
+                <li ng-repeat="file in files track by file.name" data-index="{{$index}}">
+                    <p class="file-name">{{file.name}}</p>
+                    <button class="btn btn-danger" data-ng-click="removeDocument($index)">{{'common.REMOVE'|translate}}</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- form buttons upload and back to meta information -->
+        <div class="form-group">
+            <button class="btn btn-success" data-ng-disabled="files.length === 0" data-ng-click="uploadFiles()"><i class="fa fa-upload"></i> {{'documents.FORM_UPLOAD_FILES'|translate}}</button>
+        </div>
+
+    </form>
+
+</section>
+
+<!--Showing raw text/ OCR-scan if document has files attached-->
+<section data-ng-show="document.Status == 4">
+    <form>
+        <div class="form-group file-edit">
+
+            <!--Link to file-->
+            <div>
+                <label>{{'documents.FORM_LINK_TO_SCANNED_DOCUMENT'|translate}}</label>
+                <a href="{{document.LinkToFile}}"> {{document.Title}}</a>
+            </div>
+            <!--File preview-->
+            <div class="file-preview">
+                <label>{{'documents.FORM_PREVIEW'|translate}}</label>
+                <object class="pdf-preview" data="{{document.LinkToFile}}" type="application/pdf"></object>
+            </div>
+            <!--File content-->
+            <div class="file-content">
+                <label>{{'documents.FORM_RAW_TEXT'|translate}}</label>
+                <textarea class="form-control" data-ng-model="document.RawText"></textarea>
+            </div>
+        </div>
+        <!-- Save raw text button-->
+        <div class="form-group">
+            <button class="btn btn-success" data-ng-click="saveRawText()"><i class="fa fa-save"></i> {{'documents.FORM_SAVE_RAW_TEXT'|translate}}</button>
+        </div>
+
+    </form>
+</section>
+
+<!--Displaying status message still uploading-->
+<section data-ng-show="document.Status == 3">
+    <div>
+        {{'documents.RAW_TEXT_IN_PROGRESS'|translate}}
+    </div>
+</section>

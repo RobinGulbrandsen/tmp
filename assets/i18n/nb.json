@@ -1,0 +1,144 @@
+﻿{
+    "common":  {
+        "ADMIN":            "Administrasjonspanel",
+        "FOOTER":           "MøllerGruppen, Frysjaveien 31b, Postboks 6671 Etterstad, 0609 Oslo. Sentralbord: 24 03 33 00",
+        "OK":               "Ok",
+        "NO":               "Nei",
+        "CANCEL":           "Avbryt",
+        "CONFIRM_DELETE":   "Er du sikker på at du vil slette?",
+        "EDIT":             "Endre",
+        "DELETE":           "Slett",
+        "BACK":             "Tilbake",
+        "NEXT":             "Videre",
+        "REMOVE":           "Fjern",
+        "menu": {
+            "DOCUMENTS":    "Dokumenter",
+            "EDITORS":      "Redaktører",
+            "SETTINGS":     "Innstillinger",
+            "LOGOUT":       "Logg ut"
+        }     
+    },
+    "documents":  {
+        "TITLE":                        "Dokumenter",
+        "TITLE_NEW":                    "Nytt dokument",
+        "TITLE_EDIT":                   "Rediger dokument",
+        "TITLE_SEARCH":                 "Søk etter dokument",
+        "PUBLISHED":                    "Publisert",
+        "FORM_TITLE":                   "Tittel",
+        "FORM_TITLE_ERROR":             "Tittel må fylles inn",
+        "FORM_DESCRIPTION":             "Beskrivelse",
+        "FORM_ORIGINAL_DATE":           "Originaldato",
+        "DATE_PICKER_FORMAT":           "DD.MM.YYYY",
+        "DATE_PICKER_CURRENT":          "I dag",
+        "DATE_PICKER_CLEAR":            "Fjern",
+        "DATE_PICKER_CLOSE":            "Lukk",
+        "FORM_GRANULARITY":             "Nyaktighet innen: ",
+        "FORM_TAG":                     "Tag",
+        "FORM_TAG_SELECT":              "Legg til tag..",
+        "FORM_PUBLICATION":             "Publisering",
+        "FORM_PUBLISH":                 "Publiser",
+        "FORM_PUBLISH_DATE":            "Publiseringsdato:",
+        "FORM_UPLOAD_DOCUMENT":         "Opprett dokument",
+        "FORM_UPLOAD_FILES":            "Last opp filer",
+        "FORM_CONFIRM_UPLOAD_DOCUMENTS":"Er du sikker på at du vil laste opp?",
+        "FORM_STEP":                    "Steg",
+        "FORM_STEP_OF":                 "av",
+        "FORM_FILES":                   "Filer",
+        "FORM_FILES_UPLOADING":         "Filer til opplasting.",
+        "FORM_CHOOSE_FILES":            "Velg filer",
+        "FORM_SAVE_DOCUMENT":           "Lagre dokument",
+        "FORM_LINK_TO_SCANNED_DOCUMENT":"Link til dokument",
+        "FORM_PREVIEW":                 "Forhåndsvisning",
+        "FORM_SAVE_RAW_TEXT":           "Oppdater råtekst",
+        "FORM_RAW_TEXT":                "Råtekst",
+        "FORM_SEARCH":                  "Søk",
+        "RAW_TEXT_IN_PROGRESS":         "Filene er under prosessering. Vennligst vent eller kom tilbake senere",
+        "NOT_PUBLISHED":                "Ikke publisert",
+        "pagination":  {
+            "NEXT":       "Neste",
+            "PREVIOUS":   "Forrige"
+        },
+        "granularity": {    
+            "LEVEL_0":          "Dag",
+            "LEVEL_4":          "Måned",
+            "LEVEL_6":          "År",
+            "LEVEL_8":          "Tiår"
+        },
+        "SELECTED_GRANULARITY":                 "Velg nøyaktighet",
+        "ATTACHMENTS":                          "Vedlegg",
+        "META_INFORMATION":                     "Dokumentinformasjon",
+        "INVALID_FILE_TYPE":                    "En av filene er ikke i et gyldig filformat",
+        "INVALID_DOCUMENT_IMAGE_COMBINATION":   "Du kan ikke laste opp både bilder og dokumenter samtidig. Du kan ikke laste opp to eller flere Microsoft Office dokumenter.",
+        "FILE_UPLOAD_ERROR":                    "Filene feilet under prosessering på server. Last opp filene på nytt eller forsøk å laste opp filene i et annet format."
+    },
+    "users":  {
+        "FIRST_NAME":                       "Fornavn",
+        "LAST_NAME":                        "Etternavn",
+        "TITLE":                            "Redaktører",
+        "NEW_USER":                         "Ny redaktør",
+        "EMAIL":                            "E-post",
+        "PASSWORD":                         "Passord",
+        "RE_TYPE_PASSWORD":                 "Skriv passord på nytt",
+        "PASSWORD_NOT_MATCHING":            "Passordene er ikke like",
+        "PASSWORD_NOT_STRONG_ENOUGH":       "Passordet oppfyller ikke kravet om styrke",
+        "CHANGE_USER":                      "Endre redaktør",
+        "EMAIL_REQUIREMENT":                "E-post adressen må inneholde en @ og et punktum eks: per@moller.no",
+        "PASSWORD_REQUIRMENT_NUMBERS":      "Passordet må inneholde minst et tall 0-9",
+        "PASSWORD_REQUIRMENT_ALPHA_LETTER": "Passordet må inneholde minst en liten bokstav a-z",
+        "PASSWORD_REQUIRMENT_LETTERS":      "Passordet må inneholde minst en stor bokstav  A-Z",
+        "PASSWORD_REQUIRMENT_SPECIAL":      "Passordet må inneholde minst et spesial tegn . , ? ! @ # $ % - _",
+        "PASSWORD_REQUIRMENT_MINIMUM":      "Passordet må minst være 8 tegn langt",
+        "SUCCESSFUL_INSERT":                "har nå blitt lagret",
+        "USER_EXISTS":                      "eksisterer allerede",
+        "USER_EXISTS_HEADER":               "Redaktør eksisterer"  
+
+    },
+    "login":  {
+        "TITLE":                                "Logg inn",
+        "EMAIL":                                "E-post",
+        "PASSWORD":                             "Passord",
+        "ERROR_MESSAGE_LOGIN_CRIDENTIALS":      "Kunne ikke logge inn. Feil e-post eller passord",
+        "ERROR_MESSAGE_MISSING_EMAIL":          "E-post-feltet mangler eller inneholder ikke en korrekt e-postadresse",
+        "ERROR_MESSAGE_MISSING_PASSWORD":       "Passordfeltet kan ikke være tomt",
+        "ERROR_HEADER_LOGIN_CRIDENTIALS":       "Feil innloggingsinformasjon"
+
+    },
+    "error" :  {
+        "BAD_REQUEST_STATUS_CODE":      "400 Skjema feil",
+        "BAD_REQUEST":                  "Det er feil i skjema eller inputverdiene",
+        "UNAUTHORIZED_STATUS_CODE":     "401 Ingen tilgang",
+        "UNAUTHORIZED":                 "Du er ikke logget inn eller har ikke rettigheter til å se og endre dette inneholdet",
+        "SERVER_ERROR_STATUS_CODE":     "500 Intern server feil",
+        "SERVER_ERROR":                 "Det har oppstått en problem på serveren. Vennligst prøv igjen senere",
+        "CONFIRM_DELETE":               "Er du sikker på at du vil slette: ",
+        "NOT_FOUND":                    " eksisterer ikke eller har blitt slettet",
+        "NOT_FOUND_STATUS_CODE":        "404 Dokumentet eksisterer ikke",
+        "DELETE_SELF":                  "Du kan ikke slette deg selv",
+        "DELETE_SELF_HEADER":           "Feil under sletting"
+    },
+    "session":  {
+        "SESSION_EXPIRED":          "Sesjonen din har utløpt. Du blir nå logget ut",
+        "SESSION_EXPIRED_HEADER":   "Sesjon utløpt"
+    },
+    "settings": {
+        "INFO":             "Trykk på knappen for å oppdatere mollerarkivet.no med siste bilder fra Flickr. ",
+        "KNAPP":            "Oppdater bilder fra Flickr",
+        "OPPDATER_KNAPP":   "Oppdater status",
+        "GENERAL":          "Generelt",
+        "LAYOUT":           "Hjemmeside",
+        "SAVE_LANGUAGE":    "Lagre",
+        "SAVE_SETTINGS":    "Lagre",
+        "EMPTY_FIELDS":     "Ingen av feltene kan være tomme",
+        "CHOOSE_LANGUAGE":  "Velg språk",
+        "SCHEDULE_ON_OF":   "Cachertjeneste",
+        "languages": {
+            "no_nb": "Norsk",
+            "no_nn": "Nynorsk",
+            "en_us":  "Engelsk"
+        },
+        "scheduler": {
+            "DAILY":    "Daglig",
+            "WEEKLY":   "Ukentlig"
+        }
+    }
+}

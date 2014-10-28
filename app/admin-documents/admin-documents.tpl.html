@@ -1,0 +1,84 @@
+﻿<section>
+    
+    <div class="document-header">
+        <!--title and create new document button-->
+        <h2>{{'documents.TITLE' | translate}}</h2>
+        <button class="btn btn-success" data-ng-click="newDocument()">
+            <i class="fa fa-file-o"></i> {{'documents.TITLE_NEW' | translate}}
+        </button>
+    </div>
+    
+    <!-- input search-->
+    <form class="document-search" submit="search(query)">
+        <input type="search" class="form-control" data-ng-model="query" placeholder="{{'documents.FORM_SEARCH' | translate}}..." />
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" data-ng-click="search(query)">
+                <i class="fa fa-search"></i> {{'documents.FORM_SEARCH' | translate}}
+            </button>
+        </div>
+    </form>
+    
+    <!--Document list -->
+    <div>
+        <!-- feedback number of hits, searching and no results-->
+        <div class="text-center">
+            <!-- searching for documents-->
+            <div data-ng-show="showLoader" id="spinnerHolder">
+            </div>
+
+            <!--show no results-->
+            <div data-ng-show="showNoResults">
+                Fant ingen resultater
+            </div>
+        </div>
+
+
+        <!-- -document container including pagination and document list-->
+        <div data-ng-show="!showLoader && !showNoResults">
+            <!-- document list -->
+            <table>
+                <!-- table header-->
+                <thead>
+                    <tr>
+                        <th>{{'documents.TITLE' | translate}}</th>
+                        <th>{{'documents.PUBLISHED' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- repaeat for each document-->
+                    <tr data-ng-repeat="document in documentList">
+                        <td class="table-text" data-ng-click="editDocument(document.Id)">
+                            <p>{{document.Title}}</p>
+                        </td>
+                        <td data-ng-click="editDocument(document.Id)">
+                            <span class="label label-danger" data-ng-show="!document.Published">{{'documents.NOT_PUBLISHED' | translate}}</span>
+                            <span class="label label-primary" data-ng-show="document.Published">{{document.PublishDate | date : 'dd-MM-yyyy'}}</span>
+
+                        </td>
+                        <td>
+                            <div class="editor-list-delete table-delete">
+                                <button class="btn btn-danger" data-ng-click="deleteDocument(document.Id, document.Title, $index)"><i class="fa fa-trash-o"></i> {{'common.DELETE' | translate}}</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <!-- Pagination-->
+            <div class="text-center">
+                <pagination data-total-items="totalCount"
+                            data-items-per-page="pageSize"
+                            page="pageNumber"
+                            data-rotate="true"
+                            max-size="10"
+                            on-select-page="pageChanged(page)"
+                            previous-text="{{previousText}}"
+                            next-text="{{nextText}}">
+                </pagination>
+            </div>
+        </div>
+
+    </div>
+
+</section>

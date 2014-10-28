@@ -1,0 +1,56 @@
+﻿.editor-list-menu {
+    width: 100%;
+    height: 70px;
+    
+    .editor-list-title {
+        float: left;
+    }
+
+    .editor-list-button {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        float: right;
+    }
+}
+
+.editor-list-container {
+    li:nth-child(even) {
+        background: #DDD;
+    }
+    
+    .editor-list-element {
+        width: 100%;
+        height: 33px;
+        margin: 0.25em;
+        margin-left: 0em;
+
+        .editor-list-user {
+            float: left;
+            font-size: 1.25em;
+            vertical-align: middle;
+            line-height: 35px;
+            width: 85%;
+            padding-left: 1em;
+        }
+
+        .editor-list-delete {
+            float: right;
+            width: 10%;
+        }
+    }
+    
+    .editor-list-element:hover {
+        background-color: #BBB;
+        cursor: pointer;
+    }
+
+    @media (max-width: 767px) {
+        .editor-list-element {
+            margin-bottom: 1em;
+        
+        }
+    }
+}
+
+
+

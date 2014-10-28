@@ -1,0 +1,398 @@
+@import '../../vendor/bootstrap/less/bootstrap.less';
+@import (inline) '../../vendor/ng-tags-input/ng-tags-input.css';
+@import 'variables.less';
+@icon-font-path: "../assets/fonts/";
+
+/**
+ * Less files imported from modules
+ */
+@import '../../src/app/admin-documents/admin-documents.less';
+@import '../../src/app/admin-documents/admin-documents-new.less';
+@import '../../src/app/admin-settings/admin-settings.less';
+@import '../../src/app/admin-users/admin-users.less';
+@import '../../src/app/login/login.less';
+@import '../../src/app/common/menu.less';
+
+/**
+ * Typography
+ */
+@font-face {
+  font-family: "Helvetica Neue", Helvetica, Arial,sans-serif;
+  color:#5a5a5a;
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+} 
+
+ul {
+    list-style-type: none;
+    margin: 0em;
+    padding: 0em;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+table {
+    margin-top: 1em;
+    cursor: pointer;
+    width: 100%;
+
+    thead {
+        border-bottom: solid 1px #AAA;
+    }
+
+    tbody {
+        tr:nth-child(even) {
+            background: #DDD;
+        }
+
+        tr:hover {
+            background-color: #CCC;
+
+            a {
+                text-decoration: none;
+            }
+        }
+        
+        tr {
+            line-height: 40px;
+
+            .table-text {
+                padding-left: 1em;
+                font-weight: bold;
+                line-height: 34px;
+            }
+            .table-delete {
+                padding-bottom: 2px;
+            }
+        }
+    }
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+  cursor: pointer;
+}
+
+.error {
+    color: red;
+    padding-left: 0.5em;
+}
+
+.form-group-body {
+    padding-left: 1em;
+}
+
+.cursive {
+    font-style: italic;
+}
+
+.container-max-medium{
+    max-width:500px;
+}
+
+.container-center{
+    margin:auto;
+}
+
+.modal-center-hide {
+    .modal-content {
+        border: none;
+    }
+}
+
+.moller-content {
+    width: 100%;
+    padding: 1em;
+    clear: both;
+    padding-top: 2em;
+    min-height:724px;
+}
+
+.input-box {
+    cursor: pointer;
+    width: 17px;
+    height: 17px;
+}
+
+.li-shadow{
+    li {
+        padding-left: 5px;
+    }
+    li:hover {
+        cursor: pointer;
+        background-color: #DDD;
+    }
+}
+
+.sortable {
+    cursor: move;
+    font-weight: bold;
+    
+    li {
+        background-color: #DDD;
+        padding: 1em;
+        margin: 0.25em;
+    }
+
+    .sortable-ghost {
+        visibility: hidden;
+    }
+}
+
+.text-clean {
+    text-decoration: none;
+}
+
+.tags {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+//Error Modal
+.modal-header {
+    border-radius: 5px 5px 0px 0px;
+    color: white;
+    background: @mollerHeaderBlueBackground1;
+    background: @mollerHeaderBlueBackground2;
+    background: @mollerHeaderBlueBackground3;
+    background: @mollerHeaderBlueBackground4;
+    background: @mollerHeaderBlueBackground5;
+    background: @mollerHeaderBlueBackground6;
+    background: @mollerHeaderBlueBackground7;
+}
+
+.modal-center {
+    position:fixed;
+    top:25%;
+    overflow:hidden;
+}
+
+.modal-body {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.modal-footer {
+    clear: both;
+
+    button {
+        min-width: 7.5em;
+    }
+}
+
+@media (max-width: 767px) {
+
+    //Menu
+    .moller-content-menu {
+        li {
+            border: solid lightgrey 1px;
+            border-radius: 5px;
+            margin: 0.5em;
+            margin-left: 0em;
+        }
+    }
+            
+
+    .modal-footer {
+        button {
+            float: right;
+            width: 100%;
+            margin-bottom: 1em;
+        }
+    }
+
+    .moller-header {
+        width: 100%;
+        height: 63px;
+        background: rgba(0, 0, 0, 0.8);
+        position: relative;
+        background: @mollerHeaderBlueBackground1;
+        background: @mollerHeaderBlueBackground2;
+        background: @mollerHeaderBlueBackground3;
+        background: @mollerHeaderBlueBackground4;
+        background: @mollerHeaderBlueBackground5;
+        background: @mollerHeaderBlueBackground6;
+        background: @mollerHeaderBlueBackground7;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003397', endColorstr='#0d5fd6',GradientType=0 ); /* IE6-9 */
+
+        .moller-logo-container {
+            float: left;
+            width: 70%;
+            height: 100%;
+            padding-left: 10px;
+
+            .moller-logo {
+                width: 100%;
+                height: 100%;
+                background: url(../assets/img/moller-logo-main.png) left center no-repeat;
+                background-size: 76%;
+                max-width: 300px;
+            }
+        }
+        
+        .moller-header-text {
+            float: left;
+            height: 0px;
+            width: 0px;
+
+            h1 {
+                font-size: 1px;
+                visibility: hidden;
+            }
+        }
+        
+        .moller-header-menu {
+            float: right;
+            width: 25%;
+            height: 100%;
+           
+            a,
+            a:active,
+            a:target,
+            a:focus {
+                float: right;
+                width: 35px;
+                height: 35px;
+                background-image: url('img/menu-button.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-color: transparent;
+                border: 1px solid #093688;
+                border-radius: 4px;
+                box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+                margin-right: 13px;
+                margin-top: 13px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .moller-content {
+        width: 100%;
+        padding: 1em;
+        padding-top: 0.5em;
+        clear: both;
+        min-height:724px;
+    }
+}
+
+@media (min-width : 768px) {
+    .moller-header {
+        width: 100%;
+        height: 87px;
+        background: rgba(0, 0, 0, 0.8);
+        position: relative;
+
+        .moller-logo-container {
+            background: #003397; /* Old browsers */
+            background: -moz-linear-gradient(top, #003397 10%, #0d5fd6 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #003397), color-stop(100%, #0d5fd6)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #003397 10%, #0d5fd6 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #003397 10%, #0d5fd6 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #003397 10%, #0d5fd6 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #003397 10%, #0d5fd6 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#003397', endColorstr='#0d5fd6',GradientType=0 ); /* IE6-9 */
+
+            margin-bottom: -20px;
+            margin-left: 30px;
+            position: relative;
+            width: 398px;
+            height: 100px;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+            float: left;
+
+            .moller-logo {
+                background: url(../assets/img/moller-logo-main.png) center center no-repeat;
+                background-size: 76%;
+                width: 100%;
+                height: 100px;
+            }
+        }
+
+        @media (min-width: 850px) {
+            .moller-header-text {
+                float: left;
+                height: 87px;
+                color: white;
+                margin-left: 2em;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .moller-header-text {
+                float: left;
+                visibility: hidden;
+
+                h1 {
+                    font-size: 1px;
+                }
+            }
+        }
+
+        .moller-header-menu {
+            float: right;
+            visibility: hidden;
+            width: 0px;
+            height: 0px;
+        }
+    }
+
+    .moller-content {
+        float: left;
+        width: 100%;
+
+        .moller-content-menu {
+            width: 230px;
+            float: left;
+        }
+
+        .moller-content-main {
+            margin-left: 230px;
+            padding: 1em;
+        }
+    }
+}
+
+.moller-footer {
+    clear: both;
+    width: 100%;
+    background: #343434 url(../assets/img/moller-footer-logo.png) center 30px no-repeat;
+    background-color: @mollerFooterBackgroundColor;
+    padding: 150px 0px 40px;
+    font-size:0.9em;
+    text-align: center;
+    color: #b8b8b8;
+        
+}
+   

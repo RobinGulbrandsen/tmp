@@ -1,0 +1,109 @@
+﻿<section class="container-max-medium">
+    <form data-ng-submit="saveDocument()">
+        <!-- title-->
+        <div class="form-group">
+            <div class="form-group-title">
+                <label>{{'documents.FORM_TITLE'|translate}}</label>
+            </div>
+            <div class="form-group-body">
+                <input type="text"
+                       class="form-control"
+                       data-ng-model="document.Title"
+                       placeholder="{{'documents.FORM_TITLE' | translate}}..." />
+                <span class="error" data-ng-show='titleNotValid'>{{'documents.FORM_TITLE_ERROR'| translate}}</span>
+            </div>
+        </div>
+
+        <!-- description-->
+        <div class="form-group">
+            <div class="form-group-title">
+                <label>{{'documents.FORM_DESCRIPTION'|translate}}</label>
+            </div>
+            <div class="form-group-body">
+                <input type="text"
+                       class="form-control"
+                       data-ng-model="document.Description"
+                       placeholder="{{'documents.FORM_DESCRIPTION' | translate}}..." />
+            </div>
+        </div>
+
+        <!--Original date -->
+        <div class="form-group">
+            <div class="form-group-title">
+                <label>{{'documents.FORM_ORIGINAL_DATE'|translate}}</label>
+            </div>
+            <div class="form-group-body">
+                <div class="input-group original-dato">
+                    <!--the date picker-->
+                    <input type="text" class="form-control" datepicker-popup="{{datePickerFormat}}"
+                           data-ng-model="document.OriginalDate"
+                           data-is-open="openedOriginalDate"
+                           data-close-text="{{'documents.DATE_PICKER_CLOSE'|translate}}"
+                           data-current-text="{{'documents.DATE_PICKER_CURRENT'|translate}}"
+                           data-clear-text="{{'documents.DATE_PICKER_CLEAR'|translate}}"
+                           placeholder="{{'documents.DATE_PICKER_FORMAT'|translate}}" />
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{ selectedGranularityName }} <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right li-shadow" role="menu">
+                            <li data-ng-repeat="granularity in granularityItems"
+                                data-ng-click="selectGranularity(granularity)">{{ granularity.name }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publish date-->
+        <div class="form-group">
+            <div class="form-gorup-title">
+                <label class="text-clean">{{'documents.FORM_PUBLICATION'|translate}}</label>
+            </div>
+            <div class="form-group-body">
+                <!--Toogle button publish-->
+                <div class="publish-enable">
+                    <div class="publish-select">
+                        <span>{{'documents.FORM_PUBLISH'|translate}}</span>
+                        <input class="input-box" type="checkbox" data-ng-model="document.Published">
+                    </div>
+
+                    <!-- Publish datepicker-->
+                    <div class="publish-date" data-ng-show="document.Published">
+                        <!--the date picker-->
+                        <input type="text" class="form-control" datepicker-popup="{{datePickerFormat}}"
+                               data-ng-model="document.PublishDate"
+                               data-is-open="openedPublishDate"
+                               data-ng-required="false"
+                               data-close-text="{{'documents.DATE_PICKER_CLOSE'|translate}}"
+                               data-current-text="{{'documents.DATE_PICKER_CURRENT'|translate}}"
+                               data-clear-text="{{'documents.DATE_PICKER_CLEAR'|translate}}"
+                               data-weeks-text="{{'documents.DATE_PICKER_CLEAR'|translate}}"
+                               placeholder="{{'documents.DATE_PICKER_FORMAT'|translate}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tags-->
+        <div class="form-group">
+            <div class="form-group-title">
+                <label>{{'documents.FORM_TAG'|translate}}</label>
+            </div>
+            <div class="form-group-body">
+                <tags-input class="text-input" data-ng-model="document.Tags" placeholder="{{tagsInputText}}" min-length="1">
+                    <auto-complete source="loadTags($query)"
+                                   max-results-to-show="4"
+                                   min-length="1"></auto-complete>
+                </tags-input>
+            </div>
+        </div>
+
+        <!-- next and back button-->
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" data-ng-disabled="!document.Title"> <i class="fa fa-save"></i> {{'documents.FORM_SAVE_DOCUMENT'|translate}}</button>
+            <button class="btn btn-danger" data-ng-click="cancel()">{{'common.BACK'|translate}}</button>
+            
+        </div>
+    </form>
+
+</section>
+

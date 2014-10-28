@@ -1,0 +1,74 @@
+﻿<!-- New user form-->
+<section class="container-max-medium">
+    <h2>{{'users.NEW_USER' | translate}}</h2>
+
+    <form role="form" name="form" novalidate>
+
+        <!--Enter email-->
+        <div class="form-group">
+            <label for="email">{{'users.EMAIL' | translate}}</label>
+            <input type="text"
+                   name="Email"
+                   data-ng-model="user.Email"
+                   class="form-control"
+                   placeholder="{{'users.EMAIL' | translate}}...">
+            <span class="error" data-ng-show='emailValid'>{{'users.EMAIL_REQUIREMENT'| translate}}</span>
+        </div>
+
+        <!--Enter password-->
+        <div class="form-group">
+            <label for="password">{{'users.PASSWORD' | translate}}</label>
+            <input type="password"
+                   name="Password"
+                   class="form-control"
+                   data-ng-model="user.Password"
+                   placeholder="{{'users.PASSWORD' | translate}}..." >
+
+            <!--- Passwordchecker-->
+            <div class="error " data-ng-show='passwordStrength'>
+                <ul>
+                    <li>
+                        {{'users.PASSWORD_REQUIRMENT_NUMBERS'| translate}}
+                    </li>
+                    <li>
+                        {{'users.PASSWORD_REQUIRMENT_ALPHA_LETTER'| translate}}
+                    </li>
+                    <li>
+                        {{'users.PASSWORD_REQUIRMENT_LETTERS'| translate}}
+                    </li>
+                    <li>
+                        {{'users.PASSWORD_REQUIRMENT_SPECIAL'| translate}}
+                    </li>
+                    <li>
+                        {{'users.PASSWORD_REQUIRMENT_MINIMUM'| translate}}
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!--Re-enter password-->
+        <div class="form-group">
+            <label for="reTypePassword">{{'users.RE_TYPE_PASSWORD' | translate}}</label>
+            <input type="password"
+                   name="ConfirmPassword"
+                   class="form-control"
+                   data-ng-model="user.ConfirmPassword"
+                   data-ui-validate="'$value == user.Password'"
+                   data-ui-validate-watch="'user.Password'"
+                   placeholder="{{'users.RE_TYPE_PASSWORD' | translate}}..." >
+            <span class="error " data-ng-show='form.ConfirmPassword.$error.validator' >{{'users.PASSWORD_NOT_MATCHING'| translate}}</span>
+        </div>
+
+        <!--Save new user-->
+        <button class="btn btn-success"
+                data-ng-click="saveUser()"
+                data-ng-disabled="saveButtonDisabled">
+            <i class="fa fa-save"></i> {{'users.NEW_USER' | translate}}
+        </button>
+
+        <!--Cancel button-->
+        <button class="btn btn-danger" data-ng-click="cancel()">{{'common.BACK' | translate}}</button>
+    </form>
+
+</section>

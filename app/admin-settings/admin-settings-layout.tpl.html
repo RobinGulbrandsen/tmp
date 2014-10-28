@@ -1,0 +1,71 @@
+﻿<div>
+    <!--select language--
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{languageSelected.name}} <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-left li-shadow" role="menu">
+            <li data-ng-repeat="language in languageItems"
+                data-ng-click="selectLanguage(language)">{{ language.name }}</li>
+        </ul>
+    </div-->
+
+    <!--show loadingspinner when loading text fields-->
+    <div data-ng-show="loadingLanguage ">
+        <span data-us-spinner></span>
+    </div>
+
+    <!--hided form until language.countryCode is selected-->
+    <!----<div data-ng-show="!loadingLanguage && languageSelected.countryCode">-->
+    <div data-ng-show="!loadingLanguage">
+
+        <!--form updating the language fields-->
+        <form name="form">
+            <!-- a repeat for each field in the object-->
+            <div class="form-group form-group-settings" data-ng-repeat="lang in language">
+
+                <!--title-->
+                <div class="form-group-title">
+                    <label>{{lang.Description}}</label>
+                </div>
+                
+                <!--input field-->
+                <div class="form-group-body">
+                    
+                    <!--if type is textarea use textarea form element -->
+                    <div data-ng-if="lang.Type == 'textarea'">
+                        <textarea class="form-control"
+                                  data-ng-model="lang.Value"
+                                  ng-minlength="1"
+                                  required>
+                        </textarea>
+                    </div>
+
+                    <!--if text type use input type text-->
+                    <div data-ng-if="lang.Type == 'text'">
+                        <input type="text"
+                               class="form-control"
+                               data-ng-model="lang.Value"
+                               ng-minlength="1"
+                               required />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- display the error only if there are error in the forms-->
+            <div>
+                <span class="error" data-ng-show="form.$invalid"> {{'settings.EMPTY_FIELDS' | translate}}</span>
+            </div>
+
+            <!--save button-->
+            <button class="btn btn-success"
+                    data-ng-disabled="form.$invalid"
+                    data-ng-click="updateLanguage(language)">
+                <i class="fa fa-save"></i> {{'settings.SAVE_LANGUAGE' | translate}}
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

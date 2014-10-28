@@ -1,0 +1,25 @@
+﻿<div class="navbar-collapse collapse navbar-responsive-collapse moller-menu"
+     data-collapse="navCollapsed">
+    <ul class="nav nav-pills nav-stacked">
+        <li>
+            <a data-ui-sref="documents" ng-click="collapse()">
+                <i class="fa fa-file-o"></i> {{'common.menu.DOCUMENTS' | translate}}
+            </a>
+        </li>
+        <li>
+            <a data-ui-sref="users" ng-click="collapse()">
+                <i class="fa fa-user"></i> {{'common.menu.EDITORS' | translate}}
+            </a>
+        </li>
+        <li>
+            <a data-ui-sref="settings.general"  ng-click="collapse()">
+                <i class="fa fa-cog"></i> {{'common.menu.SETTINGS' | translate}}
+            </a>
+        </li>
+        <li>
+            <a href="#" data-ng-click="logout()" >
+                <i class="fa fa-sign-out"></i> {{'common.menu.LOGOUT' | translate}}
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,263 @@
+﻿.document-edit-navigation {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 1em;
+    border-bottom: solid 1px #777;
+
+    .btn-active {
+        background-color: white;
+        border-radius: 4px 4px 0px 0px;
+        border: solid 1px #777;
+        border-bottom: solid 1px white;
+    }
+
+    button:hover {
+        background-color: #DDD;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
+    button {
+        margin-right: -1px;
+        border-radius: 4px 4px 0px 0px;
+        border: solid 1px #CCC;
+        border-bottom: solid 1px #777;
+        background-color: white;
+        margin: -1px;
+    }
+}
+
+@media(max-width: 767px) {
+    .document-header {
+        width: 100%;
+        height: 75px;
+        margin-bottom: 1em;
+
+        h2 {
+            width: 100%;
+        }
+        button {
+            width: 100%;
+        }
+    }
+
+    .document-search {
+        width: 100%;
+        height: 40px;
+
+        input[type="search"] {
+            width: 80%;
+            float: left;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+
+        .input-group-btn {
+            width: 20%;
+            float: left;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media(min-width: 767px) {
+    .document-header {
+        width: 100%;
+        height: 75px;
+        h2 {
+            float: left;
+        }
+        button {
+            margin-top: 20px;
+            float: right
+        }
+    }
+
+    .document-search {
+        width: 100%;
+        height: 40px;
+
+        input[type="search"] {
+            width: 80%;
+            float: left;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+
+        .input-group-btn {
+            width: 20%;
+            float: left;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media(min-width: 1000px) {
+    .document-header {
+        width: 100%;
+        height: 75px;
+        h2 {
+            float: left;
+        }
+        button {
+            margin-top: 20px;
+            float: right
+        }
+    }
+
+    .document-search {
+        width: 100%;
+        height: 40px;
+
+        input[type="search"] {
+            width: 90%;
+            float: left;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+
+        .input-group-btn {
+            width: 10%;
+            float: left;
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media(min-width: 1300px) {
+    
+.file-edit {
+    width: 100%;
+    min-height: 550px;
+    
+    .file-preview {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        width: 46%;
+
+        .pdf-preview {
+            border-radius: 4px;
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+        }
+    }
+
+    .file-content {
+        margin-left: 1%;
+        margin-right: 1%;
+        float: left;
+        width: 46%;
+
+        textarea {
+            min-height: 500px;
+        }
+    }
+}
+}
+
+@media(max-width: 1300px) {
+    
+.file-edit {
+    width: 100%;
+    min-height: 550px;
+    
+    .file-preview {
+        margin: 1%;
+        width: 100%;
+
+        .pdf-preview {
+            border-radius: 4px;
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+        }
+    }
+
+    .file-content {
+        margin: 1%;
+        width: 100%;
+
+        textarea {
+            min-height: 200px;
+        }
+    }
+}
+}
+
+.granularity {
+    margin-top: 4px;
+}
+
+.original-dato {
+    ul {
+        li {
+            span {
+                button {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
+
+.publish-enable {
+    width: 100%;
+    height: 34px;
+
+    .publish-select {
+        float: left;
+        width: 30%;
+        line-height: 34px;
+
+        span {
+            padding-right: 10px;
+        }
+
+        input[type="checkbox"] {
+            height: 24px;
+            width: 24px;
+            margin: 0px;
+            vertical-align: top;
+            position: relative;
+            top: 5px;
+            *overflow: hidden;
+        }
+    }
+
+    .publish-date {
+
+        input {
+            float: right;
+            width: 70%;
+        }
+
+        ul {
+            li {
+                span {
+                    button {
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.input-dropdown {
+    border-radius: 4px;
+}

@@ -1,0 +1,18 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">{{'common.CONFIRM_DELETE' | translate}}</h3>
+</div>
+
+<div class="modal-body">
+    <p>
+        {{'error.CONFIRM_DELETE'| translate}}<br/><span class="cursive">{{error}}</span>?
+    </p>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-default btn-success"
+            data-ng-click="ok()" data-translate="common.OK">
+    </button>
+    <button class="btn btn-default btn-danger"
+            data-ng-click="cancel()" data-translate="common.CANCEL">
+    </button>
+</div>

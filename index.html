@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html ng-app="mollerarkivet" ng-controller="AppCtrl" lang="nb">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="iso-8859-1" />
+     
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+      
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+
+      <!-- favicon-->
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+
+  </head>
+    <body>
+        <!-- Header -->
+        <header class="moller-header">
+            
+            <!-- Logo -->
+            <div class="moller-logo-container">
+                <div class="moller-logo"></div>
+            </div>
+            
+            <!--The header is displayed when the screen size is larger than 767 px-->
+            <div class="moller-header-text">
+                <h1 translate="common.ADMIN"></h1>
+            </div>
+
+            <!-- Toogle button when screen size is less than 767px on mobile devices-->
+            <div class="moller-header-menu"
+                 data-ng-show="toogleBarIsVisible">
+                <a data-ng-init="navCollapsed = true"
+                   data-ng-click="navCollapsed = !navCollapsed">
+                </a>
+            </div>
+            
+        </header>
+
+        <!-- Content-->
+        <section class="moller-content">
+            
+            <!-- Left menu -->
+            <div class="moller-content-menu" 
+                 data-ui-view="menu">
+            </div>
+
+            <!-- Main content view-->
+            <div data-ui-view="main"
+                 class="moller-content-main">
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="moller-footer">
+            {{'common.FOOTER' | translate}}
+            
+        </footer>
+
+    </body>
+</html>

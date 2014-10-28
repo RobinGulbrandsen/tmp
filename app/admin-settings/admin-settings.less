@@ -1,0 +1,38 @@
+﻿
+ul.dropdown-time {
+    padding-left: 20px;
+    list-style-type: none;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.settings-form {
+    margin-bottom: 2em;
+    margin-top: 1em;
+    width: 50%;
+    cursor: default;
+    
+    tr:nth-child(even) {
+        background: white;
+    }
+
+    tr:hover {
+        background-color: white;
+    }
+        
+    tr {
+        line-height: 40px;
+
+        .table-text {
+            padding-left: 1em;
+            font-weight: bold;
+            line-height: 34px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .settings-form {
+        width: 100%;
+    }
+}
